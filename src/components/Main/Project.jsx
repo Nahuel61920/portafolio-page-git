@@ -1,4 +1,6 @@
 import React from 'react';
+import '../../pages/Project/ProjectPage.css'
+import { Link } from 'react-router-dom';
 
 /* Multi idioma */
 import { FormattedMessage } from 'react-intl';
@@ -66,8 +68,8 @@ const Project = () => {
                                 <span>-</span> jQuery
                                 <span>-</span> Bootstrap
                             </p>
-                            <a href="https://nahuel61920.github.io/Power-Engine/" className="custom-btn btn" target="_blank" rel="noopener noreferrer"><span>Demo</span></a>
-                            <a href="https://github.com/Nahuel61920/Power-Engine" className="custom-btn btn-codigo" target="_blank" rel="noopener noreferrer">Repository</a>
+                            <a href="https://nahuel61920.github.io/Justice/" className="custom-btn btn" target="_blank" rel="noopener noreferrer"><span>Demo</span></a>
+                            <a href="https://github.com/Nahuel61920/Justice" className="custom-btn btn-codigo" target="_blank" rel="noopener noreferrer">Repository</a>
                         </div>
                     </SwiperSlide>
                     <SwiperSlide className='caja'>
@@ -125,8 +127,8 @@ const Project = () => {
                                 <span>-</span> JavaScript
                                 <span>-</span> Bootstrap
                             </p>
-                            <a href="https://nahuel61920.github.io/Bienes-Raices/" className="custom-btn btn" target="_blank" rel="noopener noreferrer"><span>Demo</span></a>
-                            <a href="https://github.com/Nahuel61920/Bienes-Raices" className="custom-btn btn-codigo" target="_blank" rel="noopener noreferrer">Repository</a>
+                            <a href="https://nahuel61920.github.io/EveryRunning/" className="custom-btn btn" target="_blank" rel="noopener noreferrer"><span>Demo</span></a>
+                            <a href="https://github.com/Nahuel61920/EveryRunning" className="custom-btn btn-codigo" target="_blank" rel="noopener noreferrer">Repository</a>
                         </div>
                     </SwiperSlide>
                     <SwiperSlide className='caja'>
@@ -229,12 +231,12 @@ const Project = () => {
                 </Swiper>
                 <div className="swiper-pagination"></div>
             </div>
-            <a href="proyectos.html" className="custom-btn btn-codigo portafolio-btn" id="btn-hide">
+            <Link className="custom-btn btn-codigo portafolio-btn" to="/project">
                 <FormattedMessage
                     id='btn-more-projects'
                     defaultMessage='More projects'
                 />
-            </a>
+            </Link>
         </section>
 
     )

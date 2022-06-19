@@ -1,13 +1,20 @@
 import React, { useState, useEffect } from 'react';
+import {
+    Route,
+    Routes,
+} from "react-router-dom";
 import './App.css';
 
-/* Componet */
-import Header from './components/Header/Header';
-import Footer from './components/Footer/Footer';
-import Main from './components/Main';
-import Contenido from './components/Contenido';
-import ParticleBackground from "./components/ParticlesBg/ParticleBackground";
-import ScrollToTop from './components/ScrollToTop/ScrollToTop'
+/* Pages */
+import Home from "./pages/Home/HomePage";
+import About from "./pages/About/AboutPage";
+import Services from "./pages/Service/ServicesPage";
+import Project from "./pages/Project/ProjectPage";
+import ProjectApp from "./pages/Project/ProjectApp";
+import ProjectGame from "./pages/Project/ProjectGame";
+
+
+import RouterScrollTop from "./components/ScrollToTop/RouterScrollTop"
 
 /* Loading spinner */
 import HashLoader from "react-spinners/HashLoader";
@@ -22,7 +29,8 @@ function App() {
         }, 4000)
     }, [])
     return (
-        <div className='App'>
+        <>
+            <RouterScrollTop />
             {
                 loading ?
 
@@ -35,22 +43,16 @@ function App() {
                     </div>
 
                     :
-
-                    <div>
-                        <Header />
-
-                        <ParticleBackground />
-
-                        <Contenido />
-
-                        <Main />
-
-                        <ScrollToTop />
-
-                        <Footer />
-                    </div>
+                    <Routes>
+                        <Route exact path="/" element={<Home />}></Route>
+                        <Route exact path="/about" element={<About />}></Route>
+                        <Route exact path="/service" element={<Services />}></Route>
+                        <Route exact path="/project" element={<Project />}></Route>
+                        <Route exact path="/project/app" element={<ProjectApp />} />
+                        <Route exact path="/project/game" element={<ProjectGame />} />
+                    </Routes>
             }
-        </div>
+        </>
     )
 }
 

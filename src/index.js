@@ -1,17 +1,20 @@
-import React from 'react';
+import React from "react";
 import ReactDOM from "react-dom/client";
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import { LangProvider } from './context/Context';
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import { LangProvider } from "./context/Context";
+import { BrowserRouter } from "react-router-dom";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
-  <LangProvider>
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>
-  </LangProvider>
+  <BrowserRouter>
+    <LangProvider>
+      <React.StrictMode>
+        <App />
+      </React.StrictMode>
+    </LangProvider>
+  </BrowserRouter>
 );
 
 // If you want to start measuring performance in your app, pass a function

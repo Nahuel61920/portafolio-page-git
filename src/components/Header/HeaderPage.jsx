@@ -1,7 +1,5 @@
 import React, { useContext } from "react";
 import './Header.css';
-/* ReactScroll */
-import { Link } from 'react-scroll';
 
 /* React router */
 import { NavLink } from 'react-router-dom';
@@ -13,7 +11,7 @@ import DarkMode from '../DarkMode/DarkMode';
 import { FormattedMessage } from "react-intl";
 import { langContext } from '../../context/Context';
 
-const Header = () => {
+const HeaderPage = () => {
     // Buttom language
     const idioma = useContext(langContext);
     // Menu desplegable
@@ -34,41 +32,35 @@ const Header = () => {
         <header className="site-header">
             <div id="menu-btn" className="fas fa-bars" onClick={menuDesplegable}></div>
 
-            <NavLink className="logo" to="/PortafolioReact">
+            <NavLink className="logo" to="/PortafolioReact" >
                 <p>=(<span>NAHUEL61920</span>)=></p>
             </NavLink>
 
             <nav className="navbar">
-                <Link to="inicio" spy={true} smooth={true} offset={-150} duration={500} href="#inicio">
+                <NavLink to="/" offset={-150} duration={500}>
                     <FormattedMessage
                         id='home'
                         defaultMessage='Home'
                     />
-                </Link>
-                <Link to="sobre-mi" spy={true} smooth={true} offset={-150} duration={500} href="#sobre-mi">
+                </NavLink>
+                <NavLink to="/about" offset={-150} duration={500}>
                     <FormattedMessage
                         id='aboult'
                         defaultMessage='Aboult me'
                     />
-                </Link>
-                <Link to="servicios" spy={true} smooth={true} offset={-150} duration={500} href="#servicios">
+                </NavLink>
+                <NavLink to="/service" offset={-150} duration={500}>
                     <FormattedMessage
                         id='services'
                         defaultMessage='Services'
                     />
-                </Link>
-                <Link to="proyectos" spy={true} smooth={true} offset={-150} duration={500} href="#proyectos">
+                </NavLink>
+                <NavLink to="/project" offset={-150} duration={500}>
                     <FormattedMessage
                         id='projects'
                         defaultMessage='Projects'
                     />
-                </Link>
-                <Link to="contactos" spy={true} smooth={true} offset={-150} duration={500} href="#contactos">
-                    <FormattedMessage
-                        id='contact'
-                        defaultMessage='Contact'
-                    />
-                </Link>
+                </NavLink>
                 <div id="buttons">
                     <img onClick={() => idioma.selectLanguage('en-US')} src="https://nahuel61920.github.io/Portafoliovirtual/img/en.png" alt="EEUU" />
                     <img onClick={() => idioma.selectLanguage('es-ES')} src="https://nahuel61920.github.io/Portafoliovirtual/img/es.png" alt="España" />
@@ -81,4 +73,4 @@ const Header = () => {
     )
 }
 
-export default React.memo(Header);
+export default React.memo(HeaderPage);
